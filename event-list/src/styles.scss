@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.wrapper {
+    width: 1024px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+.cal-month-view {
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cal-month-view .cal-cell-top {
+    min-height: unset;
+}
+
+.cal-month-view .cal-events {
+    display: none;
+}
+
+.cal-month-view .cal-day-cell.cal-in-month.cal-has-events {
+    position: relative;
+}
+
+.cal-month-view .cal-day-badge {
+    padding: 2px 1px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    font-size: 9px;
+    margin: 0px;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: initial;
+}
+
+.cal-month-view .cal-day-cell {
+    min-height: unset;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn {
+    background: #31a2cc;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: unset;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.cal-day-selected {
+    background-color: red;
+}
+
+.form-wrapper {
+    background: rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+form .error span {
+    font-size: 11px;
+    color: red;
+}
+
+.list {
+    margin-left: 20px;
+    margin-top: 44px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+button.submit {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    background: #31a2cc;
+    color: #fff;
+}
+
+.item {
+    border-bottom: 1px solid #aaa;
+    padding: 15px;
+    .name {
+        color: deepskyblue;
+        text-decoration: underline;
+    }
+}
+
+app-event-item:last-child .item {
+    border-bottom: none;
+}
+
+.item .buttons {
+    opacity: 0;
+    margin: -5px -11px 0 30px;
+    button {
+        border: none;
+        margin-right: 6px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+.item:hover .buttons {
+    opacity: 1;
+}
