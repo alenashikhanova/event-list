@@ -1,0 +1,14 @@
+<div class="item flex">
+    <div class="main">
+        <p class="name">{{event.name}}</p>
+        <p *ngIf="event.budget">Бюджет: {{event.budget | currency:'USD'}}</p>
+        <p *ngIf="event.address">Адрес: {{event.address}}</p>
+        <p *ngIf="event.time">Время: {{event.time}}</p>
+        <p *ngIf="event.note">Заметочка: {{event.note}}</p>
+    </div>
+
+    <div class="buttons">
+        <button (click)="edit(event)"><mat-icon aria-hidden="false" aria-label="Example edit icon">edit</mat-icon></button>
+        <button (click)="delete(event)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></button>
+    </div>
+</div>

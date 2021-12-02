@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <p>Выбранная дата: {{date | date: 'dd.MM.YYYY'}}</p>
+    <div class="flex">
+        <app-calendar (dayChanged)="updateDate($event)"></app-calendar>
+        <app-event-list [date]="date"></app-event-list>
+    </div>
+</div>

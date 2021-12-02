@@ -1,0 +1,3 @@
+<h3>{{ date | calendarDate:(view + 'ViewTitle') }}</h3>
+<mwl-calendar-month-view [weekStartsOn]="weekStartsOn" [viewDate]="date" [events]="events" [refresh]="refresh" (dayClicked)="dayClicked($event.day)"></mwl-calendar-month-view>
+<a class="btn" routerLink="/new-event">Добавить событие</a>
