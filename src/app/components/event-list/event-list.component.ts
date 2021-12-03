@@ -11,9 +11,10 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class EventListComponent implements OnInit, OnDestroy, OnChanges {
 
-  subscriptions: Subscription = new Subscription();
-  events!: EventInterface[];
   @Input() date!: string;
+
+  events!: EventInterface[];
+  subscriptions: Subscription = new Subscription();
 
   constructor(private dataService: DataService) { }
 
@@ -28,8 +29,8 @@ export class EventListComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   initEvents(): void {
-    this.dataService.events.subscribe(events => {
+    this.subscriptions.add(this.dataService.events.subscribe(events => {
       this.events = events.filter(event => moment(event.date).format('DD.MM.YYYY') === moment(this.date).format('DD.MM.YYYY'));
-    });
+    }));
   }
 }

@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url(https://img.freepik.com/free-vector/hand-drawn-cute-cat-seamless-pattern_72192-104.jpg?size=338&ext=jpg);
+}
+
+.wrapper {
+    width: 1024px;
+    margin: 20px auto 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 80%);
+    background: #fff;
+    min-height: calc(100vh - 40px);
+}
+
+.form-wrapper {
+    background: #fff;
+    width: 1024px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    min-height: calc(100vh - 40px);
+}
+
+.flex {
+    display: flex;
+}
+
+.btn {
+    background: #fabf93;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: unset;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.cal-month-view {
+    background: #f8f7f7;
+    max-width: 310px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    .cal-cell-top {
+        min-height: unset;
+        min-width: 40px;
+    }
+    .cal-events {
+        display: none;
+    }
+    .cal-day-cell.cal-in-month.cal-has-events {
+        position: relative;
+    }
+    .cal-day-badge {
+        padding: 2px 1px;
+        position: absolute;
+        right: 4px;
+        top: 3px;
+        font-size: 9px;
+        margin: 0px;
+    }
+    .cal-day-cell.cal-today .cal-day-number {
+        font-size: initial;
+    }
+    .cal-day-cell {
+        min-height: unset;
+    }
+    .cal-cell-row .cal-cell:hover {
+        cursor: pointer;
+    }
+    .cal-day-number {
+        opacity: 1;
+    }
+}
+
+.cal-days .cal-cell-row .cal-cell:hover,
+.cal-days .cal-cell-row .cal-cell:focus {
+    background: #fabf93;
+}
+
+.cal-days .cal-cell-row .cal-cell:hover .cal-day-number,
+.cal-days .cal-cell-row .cal-cell:focus .cal-day-number {
+    color: #fff;
+}
+
+.cal-day-selected {
+    background-color: red;
+}
+
+form .error span {
+    font-size: 11px;
+    color: red;
+}
+
+.list {
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    margin-left: 20px;
+    margin-top: 47px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    .item {
+        border-bottom: 1px solid #aaa;
+        padding: 15px;
+        .name {
+            color: #fabf93;
+            text-decoration: underline;
+        }
+    }
+    .item .buttons {
+        opacity: 0;
+        margin: -5px -11px 0 30px;
+        transition: 0.4s all ease;
+        a {
+            border-radius: 4px;
+            display: inline-block;
+            padding: 2px 6px;
+            color: #000;
+        }
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.item:hover .buttons {
+    opacity: 1;
+}
+
+button.submit {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    background: #fabf93;
+    color: #fff;
+}
+
+app-event-item:last-child .item {
+    border-bottom: none;
+}
+
+h3.flex {
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 10px 10px 0 0;
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        mat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-gap: 20px;
+    .btn {
+        background: #a7a9ad;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 740px) {
+    .wrapper,
+    .form-wrapper {
+        width: calc(100% - 30px);
+    }
+    .flex {
+        flex-wrap: wrap;
+    }
+    app-calendar {
+        width: 100%;
+    }
+    .cal-month-view {
+        max-width: 100%;
+    }
+    .list {
+        width: 100%;
+        margin: 15px 0px 0;
+    }
+    app-event-list {
+        width: 100%;
+    }
+}

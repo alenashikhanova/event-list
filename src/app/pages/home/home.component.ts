@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { EventInterface, EventType } from 'src/app/interfaces/event.interface';
-import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
   selector: 'app-home',

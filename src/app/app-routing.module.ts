@@ -5,7 +5,8 @@ import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'new-event', component: NewEventComponent}
+  {path: 'new-event', component: NewEventComponent},
+  {path: 'event/:id', component: NewEventComponent} ,
 ];
 
 @NgModule({

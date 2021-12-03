@@ -8,7 +8,9 @@
     </div>
 
     <div class="buttons">
-        <button (click)="edit(event)"><mat-icon aria-hidden="false" aria-label="Example edit icon">edit</mat-icon></button>
+        <a [routerLink]="['/event/', event.id]">
+            <mat-icon aria-hidden="false" aria-label="Example edit icon">edit</mat-icon>
+        </a>
         <button (click)="delete(event)"><mat-icon aria-hidden="false" aria-label="Example delete icon">delete</mat-icon></button>
     </div>
 </div>

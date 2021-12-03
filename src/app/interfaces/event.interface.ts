@@ -1,7 +1,7 @@
 export interface EventInterface {
   id: number;
   name: string;
-  type: EventType;
+  type?: EventType;
   budget?: number;
   date: string;
   address?: string;
