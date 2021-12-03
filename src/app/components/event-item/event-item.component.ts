@@ -10,16 +10,12 @@ import { DataService } from 'src/app/services/data/data.service';
 export class EventItemComponent implements OnInit {
 
   @Input() event!: EventInterface;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {}
 
-  edit(event: EventInterface): void{
-    console.log(event);
-  }
-
   delete(event: EventInterface): void {
-    console.log(event);
     this.dataService.deleteEvent(event.id);
   }
 }

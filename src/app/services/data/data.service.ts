@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { EventInterface } from 'src/app/interfaces/event.interface';
 
 
@@ -22,9 +22,20 @@ export class DataService {
     this.dateSource.next(date);
   }
 
-  addEvent(event: EventInterface): void {
-    this.eventList.push(event);
+  addEvent(newEvent: EventInterface): void {
+    if (this.eventList.filter(event => event.id === newEvent.id).length) {
+      this.eventList = this.eventList.filter(event => event.id !== newEvent.id);
+      this.eventList.splice(newEvent.id, 0, newEvent);
+    } else {
+      this.eventList.push(newEvent);
+    }
+
     this.eventsSource.next(this.eventList);
+  }
+
+  getById(id: number): Observable<EventInterface> {
+    const event = this.eventList.filter(event => event.id === Number(id))[0];
+    return of(event);
   }
 
   deleteEvent(id: number): void {

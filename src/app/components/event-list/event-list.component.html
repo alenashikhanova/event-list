@@ -1,4 +1,4 @@
-<div class="list">
+<div class="list" *ngIf="events.length">
     <ng-container *ngFor="let event of events">
         <app-event-item [event]="event"></app-event-item>
     </ng-container>

@@ -1,0 +1,8 @@
+<h3 class="flex">
+    <button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"><mat-icon aria-hidden="false">arrow_back_ios</mat-icon></button>
+    <span>{{ viewDate | calendarDate:(view + 'ViewTitle'):'ru' }}</span>
+    <button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"><mat-icon aria-hidden="false">arrow_forward_ios</mat-icon></button>
+</h3>
+
+<mwl-calendar-month-view [locale]="locale" [weekStartsOn]="weekStartsOn" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (dayClicked)="dayClicked($event.day)"></mwl-calendar-month-view>
+<a class="btn" routerLink="/new-event">Добавить событие</a>
